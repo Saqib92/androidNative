@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SpinnerExample"></activity>
+        <activity android:name=".FileStoragePage"></activity>
+        <activity android:name=".BroadcastExample" />
+        <activity android:name=".SpinnerExample" />
         <activity android:name=".ListviewExample" />
         <activity android:name=".CheckboxExample" />
         <activity android:name=".RadioExample" />

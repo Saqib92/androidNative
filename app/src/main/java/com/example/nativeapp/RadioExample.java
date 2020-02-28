@@ -8,7 +8,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import org.w3c.dom.Text;
 
 public class RadioExample extends AppCompatActivity {
 
@@ -17,16 +20,19 @@ public class RadioExample extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_radio_example);
 
+        TextView tv = (TextView) findViewById(R.id.myText);
+        Intent it = getIntent();
+        String va = it.getStringExtra("firstVal");
+        tv.setText("Value from previous pageis: " + va);
+
         Button toCheck = (Button) findViewById(R.id.toCheckbox);
 
         RadioGroup  rGroup = (RadioGroup) findViewById(R.id.rdb);
-
         rGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 RadioButton rdb1 = (RadioButton) findViewById(R.id.rdb1);
                 RadioButton rdb2 = (RadioButton) findViewById(R.id.rdb2);
-
                 if(rdb1.isChecked()){
                     Toast.makeText(getApplicationContext(), "Male", Toast.LENGTH_SHORT).show();
                 }else if(rdb2.isChecked()){

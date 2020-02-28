@@ -29,6 +29,11 @@
         android:inputType="number"
         />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="If you Enter value in first input it will show on next page"/>
+
     <Button
         android:id="@+id/plusBtn"
         android:layout_width="match_parent"

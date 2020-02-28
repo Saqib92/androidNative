@@ -2,10 +2,12 @@ package com.example.nativeapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -17,6 +19,8 @@ public class SpinnerExample extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_spinner_example);
+        Button toProgress = (Button) findViewById(R.id.toProgress);
+
         sp = (Spinner) findViewById(R.id.spin);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, abc);
         sp.setAdapter(adapter);
@@ -29,6 +33,14 @@ public class SpinnerExample extends AppCompatActivity {
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
 
+            }
+        });
+
+        toProgress.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent(SpinnerExample.this, BroadcastExample.class);
+                startActivity(it);
             }
         });
     }

@@ -3,6 +3,7 @@ package com.example.nativeapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -22,6 +23,7 @@ public class FileStoragePage<Buttion> extends AppCompatActivity {
         final EditText fileName = (EditText) findViewById(R.id.fileName);
         final EditText content = (EditText) findViewById(R.id.content);
         Button saveBtn = (Button) findViewById(R.id.saveBtn);
+        Button toCam  = (Button) findViewById(R.id.toCamera);
 
         saveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -39,6 +41,13 @@ public class FileStoragePage<Buttion> extends AppCompatActivity {
                 }catch(IOException e){
                     e.printStackTrace();
                 }
+            }
+        });
+        toCam.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent(FileStoragePage.this, CameraExample.class);
+                startActivity(it);
             }
         });
 
